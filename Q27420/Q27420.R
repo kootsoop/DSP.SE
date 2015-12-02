@@ -22,3 +22,29 @@ lines(w2[1:n2],f2[1:n2], col="green", lwd=5)
 
 legend(0.0, 1.5, c("Proposed","Reference", "Difference"),
        col=c("blue","black","green"), lty=c(2,1,1), lwd=c(5,5,5));
+
+x <- c(seq(-1.6,-0.4,0.01), seq(-0.4,-0.2,0.001)) 
+xn <- x + rnorm(length(x))/10
+
+
+f <- seq(0,1,0.1)
+m <- f
+d4 <- signal::fir2(100,f,m)
+
+y1 <- filter(xn,h_ref, circular=TRUE)
+y2 <- filter(xn,d2, circular=TRUE)
+y3 <- filter(xn,d3, circular=TRUE)
+y4 <- filter(xn,d4, circular=TRUE)
+
+par(mfrow=c(4,1))
+plot(xn)
+title("Original signal")
+plot(y4,lwd=4,col="grey")
+lines(y1,col="blue")
+title("Deriviative calcualted using the reference technique")
+plot(y4,lwd=4,col="grey")
+lines(y2,col="black", lty=2, lwd=3)
+title("Deriviative calcualted using the proposed technique")
+plot(y4,lwd=4,col="grey")
+lines(y3,col="green", lwd=5)
+title("Deriviative calcualted using simple difference")
