@@ -1,5 +1,6 @@
     #27468
-    
+if (exists("firstquestion"))    
+{
     T <- 1000
     Npeaks <- 10
     
@@ -27,3 +28,18 @@
     par(mfrow=c(2,1))
     plot(strain,col="blue", type="l")
     plot(detrended,col="blue", type="l")
+}
+
+par(mfrow=c(5,2))
+
+for (alpha in seq(0.91,1, 0.01))
+{  
+  num <- c(1,-1)
+  den <- c(1, -alpha)
+  #gpd <- signal::grpdelay(num, den, 512, whole = TRUE, Fs = 1)  
+  #plot(gpd)
+  
+  fqz <- signal::freqz(num,den)
+  plot(abs(fqz$h))
+  title(alpha)
+}
