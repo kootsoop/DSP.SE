@@ -42,17 +42,19 @@ Pkm1km1 <- array(0,c(3,3,T+1))
 Pkm1km1[,,1] <- array(c(1000,0,0 ,0,1000,0, 0,0,1000), c(3,3))
                   
 zhat <- matrix(rep(0,3*T),c(3,T))
+err <-  matrix(rep(0,3*T),c(3,T))
 
 for (k in 2:T)
 {  
   xkkm1[,k] <- F %*% xkm1km1[,k-1]
-  Pkkm1 <- F %*% Pkm1km1[,,k] %*% t(F) + Q
+  Pkkm1 <- F %*% Pkm1km1[,,k-1] %*% t(F) + Q
   
-  #H <- diag(xkkm1[,k])
+  #H <- 2*diag(xkkm1[,k])
   
   K[,,k] <- Pkkm1 %*% t(H) %*% ginv( H %*% Pkkm1 %*% t(H) + R)
-  xkm1km1[,k+1] <- xkkm1[,k] + K[,,k] %*% (z[,k] - H %*% xkkm1[,k])
-  Pkm1km1[,,k+1] <- (matrix(c(1,0,0,0,1,0,0,0,1),3,3) - K[,,k] %*% H) %*% Pkkm1  
+  err[,k] <- z[,k] - H %*% xkkm1[,k]
+  xkm1km1[,k] <- xkkm1[,k] + K[,,k] %*% err[,k]
+  Pkm1km1[,,k] <- (matrix(c(1,0,0,0,1,0,0,0,1),3,3) - K[,,k] %*% H) %*% Pkkm1  
   zhat[,k] <- as.numeric(H %*% xkkm1[,k])
 }
 
