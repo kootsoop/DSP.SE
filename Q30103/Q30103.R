@@ -6,12 +6,12 @@ T <- 1000
 sigma_n <- 0.1
 n_k <- array(rnorm(T*3,0, sigma_n), c(3,T))
 
-sigma_m <- 0.01
+sigma_m <- 0.1
 m_k <- array(rnorm(T*3,0, sigma_m), c(3,T))
 
 F <- array(c(1,0,0, 0, 1, 0, 0, 0,1),c(3,3))
 
-x_0 <- array(0,c(3,1))
+x_0 <- array(1,c(3,1))
 x <- array(0,c(3,T))
 x[,1] <- x_0
 
@@ -49,7 +49,7 @@ for (k in 2:T)
   xkkm1[,k] <- F %*% xkm1km1[,k-1]
   Pkkm1 <- F %*% Pkm1km1[,,k-1] %*% t(F) + Q
   
-  #H <- 2*diag(xkkm1[,k])
+  H <- 2*diag(xkkm1[,k])
   
   K[,,k] <- Pkkm1 %*% t(H) %*% ginv( H %*% Pkkm1 %*% t(H) + R)
   err[,k] <- z[,k] - H %*% xkkm1[,k]
@@ -58,11 +58,18 @@ for (k in 2:T)
   zhat[,k] <- as.numeric(H %*% xkkm1[,k])
 }
 
+
+p1 <- x
+p2 <- xkm1km1
+lims <- c(-5,5)
 par(mfrow = c(3,1), pty="m")
-plot(x[1,], col="grey",ylim=c(-10,20))
-lines(xkm1km1[1,], col="red")
-plot(x[2,], col="grey",ylim=c(-10,20))
-lines(xkm1km1[2,], col="red")
-plot(x[3,], col="grey",ylim=c(-10,20))
-lines(xkm1km1[3,], col="red")
+plot(p1[1,], col="grey",ylim=lims)
+lines(p2[1,], col="red")
+title("True (grey) and Estimated (red) State p_x")
+plot(p1[2,], col="grey",ylim=lims)
+lines(p2[2,], col="red")
+title("True (grey) and Estimated (red) State p_y")
+plot(p1[3,], col="grey",ylim=lims)
+lines(p2[3,], col="red")
+title("True (grey) and Estimated (red) State p_z")
 

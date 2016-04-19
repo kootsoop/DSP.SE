@@ -1,0 +1,40 @@
+So let's assume your model is:
+$$
+ \textbf{x}_{k} = \textbf{x}_{k-1} +  \textbf{n}_k  
+$$
+where 
+$$
+\textbf{n}_k = 
+\left(\begin{matrix}
+n_x \\
+n_y \\
+n_z \\
+\end{matrix}\right)
+$$
+and each of the $n_x,n_y,n_z$ are independent, zero-mean Gaussian noise terms with variances $\sigma^2_{nx},\sigma^2_{ny},\sigma^2_{nz}$.
+
+The output equation is then:
+$$
+\textbf{z}_k = \textbf{f}(\textbf{x}_k) +  \textbf{m}_k = \left(\begin{matrix}
+p_x^2 \\
+p_y^2 \\
+p_z^2 \\
+\end{matrix}\right)  
++  \textbf{m}_k  
+$$
+where 
+$$
+\textbf{m}_k = 
+\left(\begin{matrix}
+m_x \\
+m_y \\
+m_z \\
+\end{matrix}\right)
+$$
+and each of the $m_x,m_y,m_z$ are independent, zero-mean Gaussian noise terms with variances $\sigma^2_{mx},\sigma^2_{my},\sigma^2_{mz}$.
+
+So following the EKF Wikipedia page, that means:
+$$
+\textbf{F}_{k-1} = \textbf{I}\\
+\textbf{H}_{k} = 2\textbf{I}
+$$
