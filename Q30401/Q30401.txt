@@ -1,0 +1,30 @@
+My previous answer, which you can see in the edits was incorrect.
+
+Your question boils down to:
+
+ > However, one thing I am confused is that why the first part and the second part of the object function are treated independently. 
+
+So let's try having a look at the objective function:
+$$
+\begin{array}{rcl}
+{\cal O} &=& \displaystyle \sum_{i=1}^{N} \sum_{j=1}^P \left\{ 
+w(Z_{ij}) [ g(Z_{ij}) - \ln E_i - \ln \Delta t_j ]
+\right\}^2 + \lambda \sum_{z =Z_{\rm min}+1}^{Z_{\rm max}} [w(z) g^"(z)]^2\\
+&=& \displaystyle \sum_{i=1}^{N} \sum_{j=1}^P w(Z_{ij})^2 
+ [ g(Z_{ij})^2 + (\ln E_i)^2 + (\ln \Delta t_j)^2
+- 2 g(Z_{ij}) \ln E_i - 2 g(Z_{ij}) \ln \Delta t_j + 2 \ln E_i \ln \Delta t_j
+ ]
++ \lambda \sum_{z =Z_{\rm min}+1}^{Z_{\rm max}} [w(z) \{ g(z-1) - 2g(z) + g(z + 1) \} ]^2
+\end{array}
+$$
+
+Now, we need to choose the $\ln E_i$ values to minimize this so we must take the derivative of $\cal O$ with respect to $\ln E_i$.
+
+$$
+\frac{d \cal O}{d \ln E_i} = \sum_{i=1}^{N} \sum_{j=1}^P w(Z_{ij})^2 
+ [  2 \ln E_i 
+- 2 g(Z_{ij}) + 2 \Delta t_j
+ ]
+$$
+
+
