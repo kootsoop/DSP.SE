@@ -22,7 +22,6 @@ for (n in 1:N)
   while ((is.na(start_idx)) && (sum(left) > 0))
   {
     start_idx <- min(match(check_num,left))
-    print(start_idx)    
     check_num <- check_num + 1
   }
   length <- T - 2*start_idx + 2
