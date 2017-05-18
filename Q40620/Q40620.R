@@ -56,6 +56,7 @@ for (idx in 1:(trial_count+1 ))
       #p1[n] <-  if (n > 1) -process[1]*sig_vec[n-1] else 0.0
       p1[n] <-  if (n > 1) process[1]*sig_vec[n-1] else 0.0
       
+      
 #      sig_vec.push(noise + p1);
       sig_vec[n] <- noise + p1[n]
     }
@@ -83,7 +84,9 @@ for (idx in 1:(trial_count+1 ))
       #let err = sig_vec[sig_ind] - pred;
       #WAS: 
       #err <- sig_vec[sig_ind] - pred
-      err <- p1[sig_ind] - pred
+      #err <- p1[sig_ind] - pred
+      err <- sig_vec[sig_ind] - pred
+      
       #mmse[sig_ind] += err.powi(2) / trial_count as f64;
       mmse[sig_ind] <-  mmse[sig_ind] + err^2 / trial_count
       #filt_coef += step_size * sig_vec[sig_ind - 1] * err /
