@@ -94,5 +94,5 @@ system.time(what <- optimize(fitqual, interval=c(3, 6), maximum=FALSE, tol=1E-3)
 what # estimated Gaussian peak width: 5.02 
 BICvals <- sapply(seq(1,10,length.out=100), function(width) fitqual(width) ) 
 dev.off()
-plot(seq(1,10,length.out=100), BICvals, type="l", ylab="Bayesian Information Criterion (BIC)", xlab="Gaussian peak width")
+plot(seq(1,10,length.out=100), ≈, type="l", ylab="Bayesian Information Criterion (BIC)", xlab="Gaussian peak width")
 
