@@ -1,0 +1,103 @@
+// Prerequisites in CET Program
+digraph {
+	graph [rankdir=LR]
+	node [fontsize=20 style=filled]
+	A [label=MATH099 color=gray fillcolor=gray]
+	B [label=MATH101 color=gray fillcolor=gray]
+	C [label=MATH103 color=gray fillcolor=gray]
+	Q [label="MATH101 or MATH103" color=yellow fillcolor=yellow]
+	D [label=MATH115 color=gray fillcolor=gray]
+	E [label=CET201 color=green height=1 width=1]
+	F [label=CET229 color=green height=1.4142135623730951 width=1.4142135623730951]
+	A -> B
+	A -> C
+	Q -> D
+	D -> E
+	B -> Q
+	C -> Q
+	G [label=ENGR150 color=gray fillcolor=gray]
+	H [label=ROBO110 color=gray fillcolor=gray]
+	N [label="ENGR150 or ROBO110" color=yellow]
+	I [label=MATH135 color=gray fillcolor=gray]
+	J [label=MATH152 color=gray fillcolor=gray]
+	O [label="MATH135 or MATH152" color=yellow]
+	K [label=PHYS122 color=gray fillcolor=gray]
+	L [label=PHYS126 color=gray fillcolor=gray]
+	P [label="PHYS122 or PHYS126" color=yellow]
+	N -> M
+	O -> M
+	P -> M
+	M [label=CET236 color=green height=3.1622776601683795 width=3.1622776601683795]
+	G -> N
+	H -> N
+	I -> O
+	J -> O
+	K -> P
+	L -> P
+	R [label=CET233 color=gray fillcolor=gray]
+	S [label="CET233 or CET236" color=yellow]
+	T [label=CET243 color=green height=1 width=1]
+	R -> S
+	M -> S
+	S -> T
+	U [label=CET246 color=green]
+	S -> U
+	V [label=CET249 color=green height=2.6457513110645907 width=2.6457513110645907]
+	W [label=CET323 color=green]
+	T -> W
+	X [label=CET339 color=green height=1 width=1]
+	F -> X
+	Y [label=CET349 color=green height=2.449489742783178 width=2.449489742783178]
+	V -> Y
+	a [label=MATH136 color=gray fillcolor=gray]
+	b [label=MATH221 color=gray fillcolor=gray]
+	c [label="MATH136 or MATH221" color=yellow]
+	Z [label=CET346 color=green height=1.4142135623730951 width=1.4142135623730951]
+	c -> Z
+	a -> c
+	b -> c
+	M -> Z
+	d [label=CET363 color=green height=1.7320508075688772 width=1.7320508075688772]
+	S -> d
+	e [label=CET449 color=blue fontcolor=white]
+	Y -> e
+	g [label=CS213 color=gray fillcolor=gray]
+	h [label=CS151 color=gray fillcolor=gray]
+	i [label="CS213 or CS151 or ROBO110" color=yellow]
+	f [label=CET453 color=green height=1 width=1]
+	d -> f
+	i -> f
+	g -> i
+	h -> i
+	H -> i
+	j [label=CET466 color=green]
+	d -> j
+	k [label=CET497 color=green height=1 width=1]
+	Y -> k
+	Z -> k
+	l [label=CET498 color=blue fillcolor=blue fontcolor=white]
+	k -> l
+	m [label=CET301 color=blue fontcolor=white]
+	E -> m
+	o [label="Chair Permission" color=gray]
+	n [label=CET402 color=blue fillcolor=blue fontcolor=white]
+	o -> n
+	p [label=CET443 color=blue fillcolor=blue fontcolor=white]
+	Y -> p
+	q [label=CET463 color=blue fillcolor=blue fontcolor=white]
+	f -> q
+	s [label="Chair permission or 75 credits" color=yellow]
+	r [label=CEGT400 color=blue fillcolor=blue fontcolor=white]
+	s -> r
+	o -> s
+	t [label=CET439 color=blue fillcolor=blue fontcolor=white]
+	X -> t
+	u [label=CET405 color=blue fillcolor=blue fontcolor=white]
+	o -> u
+	v [label=CET459 color=blue fillcolor=blue fontcolor=white]
+	Y -> v
+	w [label=CET479 color=blue fillcolor=blue fontcolor=white]
+	Y -> w
+	"(" [label=STAT104 color=gray]
+	")" [label=CHEM161 color=gray]
+}
