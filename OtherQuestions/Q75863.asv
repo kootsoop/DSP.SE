@@ -1,0 +1,13 @@
+N = 1024;
+x = randn(N);
+
+Nf = 128;
+h = fir1(Nf,0.1);
+
+h_real = ifftshift(h);
+
+plot(h);
+hold on;
+plot(h_real);
+
+
