@@ -1,0 +1,13 @@
+N = 1000;
+ts = 0.001;
+t = (0:N-1)*ts;
+omega = 2*pi*23;
+phi = 2*pi*0.829879;
+
+x = sin(omega*t+phi);
+y = filter(ones(1,10)/10, 1, x);
+z = filter(ones(1,10)/10, 1, [ fliplr(x(1:10)) x fliplr(x((end-10):end)) ]) ;
+plot(x);
+hold on;
+plot(y,'r');
+plot(z(11:leng,'g.');
