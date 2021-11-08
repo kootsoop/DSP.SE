@@ -1,0 +1,51 @@
+a = 1;
+b = 2;
+c = 3;
+N = 1000;
+fs = 10000;
+omega1 = 2*pi*1234;
+omega2 = exp(1)*1234;
+omega3 = sqrt(2)*pi*1234;
+rng(1234);
+phi1 = rand(1)*2*pi;
+phi2 = rand(1)*2*pi;
+phi3 = rand(1)*2*pi;
+
+t = [0:N-1]/fs;
+
+x = a*cos(omega1*t+phi1) + b*cos(omega2*t + phi2) + c*cos(omega3*t+phi3);
+figure(1);
+clf;
+subplot(211);
+plot(t,x);
+subplot(212);
+plot(abs(fft(x)));
+hold on;
+
+omegaAhat = qnf(x');
+plot(abs(fft(cos(omegaAhat*[0:N-1]))),'r');
+DFT = sum(x.*exp(-1j*omegaAhat*[0:N-1]));
+phiAhat = angle(DFT);
+Ahat = abs(DFT)/N*2;
+disp([omega1 omega2 omega3]/fs);
+disp([phi1 phi2 phi3]);
+disp([omegaAhat phiAhat]);
+
+x2 = x - Ahat*cos(omegaAhat*[0:N-1]+phiAhat);
+
+figure(2);
+clf;
+subplot(211);
+plot(abs(fft(x2)));
+
+
+omegaBhat = qnf(x2');
+plot(abs(fft(cos(omegaBhat*[0:N-1]))),'r');
+DFT2 = sum(x.*exp(-1j*omegaAhat*[0:N-1]));
+phiAhat = angle(DFT2);
+Ahat = abs(DFT2)/N*2;
+disp([omega1 omega2 omega3]/fs);
+disp([phi1 phi2 phi3]);
+disp([omegaAhat phiAhat]);
+
+x2 = x - Ahat*cos(omegaAhat*[0:N-1]+phiAhat);
