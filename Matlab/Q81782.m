@@ -1,4 +1,7 @@
-function [y] = Q81782(fd,x)
+% function [y] = Q81782(fd,x)
+
+x = [1 ones(1,1023)]';
+fd = 1/3;
 
 %design fractional delay filter
 [h,i0,bw] = designFracDelayFIR(fd);
@@ -15,4 +18,4 @@ stem(y(1:256));
 title('FIR Output Sequence');
 xlabel('n')
 
-end
+% end
