@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: ethomson/send-tweet-action@v1
         with:
-          status: "Committed to ${{ github.event.repository.name }} : ${{ github.event.head_commit.message }}"
+          status: "Committed to https://github.com/kootsoop/DSP.SE : ${{ github.event.head_commit.message }}"
           consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
           consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
           access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
