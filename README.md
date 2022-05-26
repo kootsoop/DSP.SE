@@ -7,6 +7,3 @@ To access a question, use the NNNNN from the directory name QNNNNN and go to htt
 Decided that the easiest way to learn R is to write code in it to solve problems, so this is it. This R code is not necessarily the best.
 
 More recently, I switched to wanting to present solutions in Python as that seems to be more accessible to the DSP.SE community.
-
-See if it tweets.
-
