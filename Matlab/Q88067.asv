@@ -1,0 +1,47 @@
+N = 1000; %number of discrete frequencies to digitize the continuous spectrum
+a = 1.2566; %constant
+b = 0.00078956; %constant
+%w = 10.^linspace(0,-4,N); %get logarithmically spaced frequencies omega
+w = linspace(0,1,N);
+
+%The spectrum
+G = a./sqrt(b*w);
+
+
+M = 100000; %length of time series
+fs = 1; %assuming a 1 Hz sample rate
+
+t = linspace(0,fs*M,M)';
+
+%the time series is computed as a "dumb" Fourier transform which assumes
+%that each discrete frequency is a delta spike respresenting a time-domain
+%sinusoid. Just sum it all together:
+g = sum(G.*exp(1i*2*pi*w.*t),2); 
+
+
+%Now perform fft on the time series you just made
+pad = 10000;
+%xt = cat(1,ones(pad,1).*g(1),g,ones(pad,1).*g(end)); %add some padding cells to the time series
+X = fft(g,pad); 
+
+%Calculate frequency bins
+df = fs/pad;
+fAxis = (0:df:(fs-df)) - (fs-mod(M,2)*df)/2;
+
+%Plotting
+clf
+subplot(2,1,1) %Plot spectrum
+loglog(w,G,'*r'); hold on; grid on
+loglog(fAxis,abs(X),'-k'); 
+xlabel('Frequency (Hz)');
+ylabel('G(\omega)')
+set(gca,'FontSize',14)
+title('Spectrum G(\omega)')
+legend('"True" Spectrum','FFT of Time Series')
+
+subplot(2,1,2); %Plot time series
+plot(t/3600,real(g)); hold on;
+xlabel('Time (hours)')
+ylabel('g(t)'); grid on
+set(gca,'FontSize',14)
+title('Inverse "Fourier Transform" of Spectrum')
