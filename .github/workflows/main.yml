@@ -4,10 +4,10 @@ jobs:
   tweet:
     runs-on: ubuntu-latest
     steps:
-      - uses:  ethomson/send-tweet-action@v1
+      - uses: nearform-actions/github-action-notify-twitter@master
         with:
-          status: "Committed to https://github.com/kootsoop/DSP.SE : ${{ github.event.head_commit.message }}"
-          consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
-          consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
-          access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
-          access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+          message: "Committed to https://github.com/kootsoop/DSP.SE : ${{ github.event.head_commit.message }}"
+          twitter-app-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
+          twitter-app-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
+          twitter-access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          twitter-access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
