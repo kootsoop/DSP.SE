@@ -1,0 +1,65 @@
+General
+Complete name                            : D:\_TEMP-WORK\2019_Japan-Pctures\AVI2JPG\P1000014-Japan-Osaka.MP4
+Format                                   : MPEG-4
+Format profile                           : Base Media / Version 2
+Codec ID                                 : mp42 (mp42/avc1)
+File size                                : 9.91 MiB
+Duration                                 : 1 s 1 ms
+Overall bit rate mode                    : Variable
+Overall bit rate                         : 83.0 Mb/s
+Encoded date                             : UTC 2019-02-27 03:16:22
+Tagged date                              : UTC 2019-02-27 03:16:22
+PANA                                     : Ìü{ýµt2¾8Ð|Kâ`bv{UNàCcåð	üW|IñÒ§Â5¾ÍÒîÕH%[{GÁÇRÇø×Ñ_ðU½iußú2øLGáO,/ÔùS²ýïR7g'¥~w71â/Þñ:dx¸ aÿ
+
+Video
+ID                                       : 1
+Format                                   : AVC
+Format/Info                              : Advanced Video Codec
+Format profile                           : High@L5.1
+Format settings                          : CABAC / 2 Ref Frames
+Format settings, CABAC                   : Yes
+Format settings, RefFrames               : 2 frames
+Codec ID                                 : avc1
+Codec ID/Info                            : Advanced Video Coding
+Duration                                 : 1 s 1 ms
+Bit rate mode                            : Variable
+Bit rate                                 : 81.1 Mb/s
+Maximum bit rate                         : 106 Mb/s
+Width                                    : 3 504 pixels
+Height                                   : 2 336 pixels
+Display aspect ratio                     : 3:2
+Frame rate mode                          : Constant
+Frame rate                               : 29.970 (30000/1001) FPS
+Color space                              : YUV
+Chroma subsampling                       : 4:2:0
+Bit depth                                : 8 bits
+Scan type                                : Progressive
+Bits/(Pixel*Frame)                       : 0.330
+Stream size                              : 9.67 MiB (98%)
+Encoded date                             : UTC 2019-02-27 03:16:22
+Tagged date                              : UTC 2019-02-27 03:16:22
+Color range                              : Full
+Color primaries                          : BT.709
+Transfer characteristics                 : BT.709
+Matrix coefficients                      : BT.709
+Codec configuration box                  : avcC
+
+Audio
+ID                                       : 2
+Format                                   : AAC LC
+Format/Info                              : Advanced Audio Codec Low Complexity
+Codec ID                                 : mp4a-40-2
+Duration                                 : 1 s 1 ms
+Source duration                          : 1 s 3 ms
+Bit rate mode                            : Constant
+Bit rate                                 : 128 kb/s
+Channel(s)                               : 2 channels
+Channel layout                           : L R
+Sampling rate                            : 48.0 kHz
+Frame rate                               : 46.875 FPS (1024 SPF)
+Compression mode                         : Lossy
+Stream size                              : 15.4 KiB (0%)
+Source stream size                       : 15.4 KiB (0%)
+Encoded date                             : UTC 2019-02-27 03:16:22
+Tagged date                              : UTC 2019-02-27 03:16:22
+
