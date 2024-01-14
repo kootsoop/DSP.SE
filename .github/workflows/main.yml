@@ -11,12 +11,12 @@ jobs:
           twitter-app-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
           twitter-access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
           twitter-access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
-  bsky-post:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: zentered/bluesky-post-action@v0.1.0
-        with:
-          post: "Committed to https://github.com/kootsoop/DSP.SE : ${{ github.event.head_commit.message }}"
-        env:
-          BSKY_IDENTIFIER: ${{ secrets.BSKY_IDENTIFIER }}
-          BSKY_PASSWORD: ${{ secrets.BSKY_PASSWORD }}
+  # bsky-post:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: zentered/bluesky-post-action@v0.1.0
+  #       with:
+  #         post: "Committed to https://github.com/kootsoop/DSP.SE : ${{ github.event.head_commit.message }}"
+  #       env:
+  #         BSKY_IDENTIFIER: ${{ secrets.BSKY_IDENTIFIER }}
+  #         BSKY_PASSWORD: ${{ secrets.BSKY_PASSWORD }}
