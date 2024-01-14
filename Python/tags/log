@@ -1,0 +1,11 @@
+--2023-11-26 20:38:31--  https://api.stackexchange.com/2.2/tags?page=18&order=desc&sort=popular&site=dsp
+Resolving api.stackexchange.com (api.stackexchange.com)... 198.252.206.16
+Connecting to api.stackexchange.com (api.stackexchange.com)|198.252.206.16|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 335 [application/json]
+Saving to: 'tags?page=18&order=desc&sort=popular&site=dsp.1'
+
+     0K                                                       100%  319M=0s
+
+2023-11-26 20:38:31 (319 MB/s) - 'tags?page=18&order=desc&sort=popular&site=dsp.1' saved [335/335]
+
