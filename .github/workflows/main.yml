@@ -1,22 +1,22 @@
 name: Send a Tweet
 on: [push]
 jobs:
-  tweet:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: nearform-actions/github-action-notify-twitter@master
-        with:
-          message: "Committed to https://github.com/kootsoop/DSP.SE : ${{ github.event.head_commit.message }}"
-          twitter-app-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
-          twitter-app-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
-          twitter-access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
-          twitter-access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
-  # bsky-post:
+  # tweet:
   #   runs-on: ubuntu-latest
   #   steps:
-  #     - uses: zentered/bluesky-post-action@v0.1.0
+  #     - uses: nearform-actions/github-action-notify-twitter@master
   #       with:
-  #         post: "Committed to https://github.com/kootsoop/DSP.SE : ${{ github.event.head_commit.message }}"
-  #       env:
-  #         BSKY_IDENTIFIER: ${{ secrets.BSKY_IDENTIFIER }}
-  #         BSKY_PASSWORD: ${{ secrets.BSKY_PASSWORD }}
+  #         message: "Committed to https://github.com/kootsoop/DSP.SE : ${{ github.event.head_commit.message }}"
+  #         twitter-app-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
+  #         twitter-app-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
+  #         twitter-access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+  #         twitter-access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+  bsky-post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: zentered/bluesky-post-action@v0.1.0
+        with:
+          post: "Committed to https://github.com/kootsoop/DSP.SE"
+        env:
+          BSKY_IDENTIFIER: ${{ secrets.BSKY_IDENTIFIER }}
+          BSKY_PASSWORD: ${{ secrets.BSKY_PASSWORD }}
