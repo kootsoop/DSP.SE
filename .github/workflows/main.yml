@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: zentered/bluesky-post-action@v0.1.0
         with:
-          post: "Committed to https://github.com/kootsoop/DSP.SE"
+          post: "Committed to https://github.com/kootsoop/DSP.SE  : ${{ github.event.head_commit.message }}"
         env:
           BSKY_IDENTIFIER: ${{ secrets.BSKY_IDENTIFIER }}
           BSKY_PASSWORD: ${{ secrets.BSKY_PASSWORD }}
